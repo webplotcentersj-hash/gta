@@ -1,0 +1,23 @@
+---
+import PumpkinLogoImg from "@/assets/PUMPKIN-ALONE_ORANGE.png"
+
+interface Props {
+  class?: string;
+  alt?: string;
+}
+
+const { class: className = "", alt = "Logo" } = Astro.props;
+---
+
+<picture>
+  <img
+    src={PumpkinLogoImg.src}
+    srcset={`${PumpkinLogoImg.src} 1x, ${PumpkinLogoImg.src} 2x`}
+    alt={alt}
+    class={className}
+    style="image-rendering: -webkit-optimize-contrast; image-rendering: auto;"
+    decoding="async"
+    loading="eager"
+  />
+</picture>
+
